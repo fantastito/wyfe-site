@@ -1,4 +1,5 @@
 // import Link from 'next/Link';
+import React from "react";
 
 const Navbar = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'; // for matchers like toBeInTheDocument
+import '@testing-library/jest-dom'; // for matchers like toBeInTheDocument
 import Navbar from '../../components/Navbar/index';
 
 describe('Navbar Component', () => {
