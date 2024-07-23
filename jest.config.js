@@ -16,6 +16,7 @@ const config = {
 
   // Use babel-jest to transform JavaScript and JSX files
   transform: {
+    '^.+\\.(ts|tsx)$': 'babel-jest',
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
 
@@ -43,8 +44,14 @@ const config = {
     "js",
     "jsx",
     "json",
-    "node"
+    "node", 
+    "tsx"
   ],
+
+  // Handle image mocking
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
+  },
 };
 
 module.exports = config;

@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-import Navbar from '@/components/Navbar'
-import Contact from '@/components/Contact'
+import Navbar from '../components/Navbar'
+import Contact from '../components/Contact'
 
 import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg'
 import heroImage from '@/public/IMG_6056.jpg'
