@@ -11,7 +11,7 @@ describe('Navbar Component', () => {
 
   test('renders 4 text items', () => {
     render(<Navbar />);
-    const textItems = screen.getAllByText(/Wyfe|Boutique|Bespoke|About/i);
+    const textItems = screen.getAllByText(/Wyfe|Dresses|Bespoke|About/i);
     expect(textItems).toHaveLength(4);
   });
 });
