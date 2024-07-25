@@ -1,15 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 
-import Navbar from '../components/Navbar'
-import Contact from '../components/Contact'
+import Navbar from '../components/Navbar';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
-import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg'
-import heroImage from '@/public/IMG_6056.jpg'
+import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg';
+import heroImage from '@/public/IMG_6056.jpg';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="flex flex-col min-h-screen bg-black">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,7 +24,7 @@ export default function Home() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-screen-xl px-4">
+      <div className="relative z-10 mx-auto max-w-screen-xl px-4 flex-grow">
         {/* Navbar */}
         <Navbar />
         
@@ -34,7 +35,11 @@ export default function Home() {
         
         {/* Contact */}
         <Contact />
+        <Footer />
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
