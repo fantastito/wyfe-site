@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 
 import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg';
 import heroImage from '@/public/IMG_6056.jpg';
+import heroImage2 from '@/public/sonnie-hiles-WTe3w4POlCE-unsplash.jpg';
 
 export default function Home() {
   return (

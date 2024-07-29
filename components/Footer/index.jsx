@@ -1,6 +1,6 @@
 import React from "react";
 import Image from 'next/image';
-import whatsappIcon from '../../public/Digital_Glyph_White.svg'
+import whatsappIcon from '../../public/whatsapp_white_logo.svg'
 
 const Footer = () => {
   return (
