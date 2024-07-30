@@ -1,12 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Home from '../../app/page'; // Adjust the import based on your folder structure
+import Home from '../../app/page';
 import '@testing-library/jest-dom';
 
 describe('Home Page', () => {
   it('renders the Navbar component', () => {
     render(<Home />);
-    // Check if the Navbar is in the document
     expect(screen.getByRole('navigation')).toBeInTheDocument();
   });
 
@@ -17,16 +16,16 @@ describe('Home Page', () => {
     expect(logo).toBeInTheDocument();
   });
 
-  // it('renders the Contact component', () => {
-  //   render(<Home />);
-    
-  //   expect(screen.getByText(/stranger/i)).toBeInTheDocument();
-  // });
-
   it('renders the background image renders', () => {
     render(<Home />);
     
     const backgroundImage = screen.getByAltText('Background Image');
     expect(backgroundImage).toBeInTheDocument();
   });
+
+  it('renders the footer ok', () => {
+    render(<Home />);
+
+    expect(screen.getByText(/© Wyfe 2024/i)).toBeInTheDocument();
+  })
 });

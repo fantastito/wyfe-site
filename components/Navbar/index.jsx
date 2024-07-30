@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-center items-center px-4 md:px-8 lg:px-12">
           <div className="flex space-x-4 md:space-x-6 lg:space-x-8">
             {filteredPages.map((page) => (
-              <Link href={page.path}>{page.name}</Link>
+              <Link key={page.path} href={page.path}>{page.name}</Link>
             ))}
           </div>
         </div>
@@ -43,14 +43,14 @@ const Navbar = () => {
           </div>
 
           {/* Centre section */}
-          <div className="flex--none text-center">
+          <div className="flex--none text-center text-lg md:text-4xl lg:text-4xl">
             <Link href="/">{currentPage}</Link>
           </div>
 
           {/* Right section */}
           <div className="flex-1 flex justify-end space-x-4 md:space-x-6 lg:space-x-8">
             {filteredPages.map((page) => (
-              <Link href={page.path}>{page.name}</Link>
+              <Link key={page.path} href={page.path}>{page.name}</Link>
             ))}
           </div>
 
