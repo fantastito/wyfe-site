@@ -2,12 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 
 import Navbar from '../components/Navbar';
-import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import ImageOverlay from '../components/ImageOverlay/Index'
 
 import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg';
-import heroImage from '@/public/IMG_6056.jpg';
-import heroImage2 from '@/public/sonnie-hiles-WTe3w4POlCE-unsplash.jpg';
+
+
+// Env variable to toggle between public and client development images
+const imageSet = process.env.NEXT_PUBLIC_IMAGE_SET || 'unsplash';
+
+// import heroImage from '@/public/${imageSet}/IMG_6056.jpg';
+
+const heroImage = `/${imageSet}/hero_image.jpg`;
 
 export default function Home() {
   return (
@@ -24,6 +30,13 @@ export default function Home() {
           quality={100}
           className="w-full h-full"
         />
+        {imageSet !== 'mood' && (
+          <ImageOverlay 
+            photographer="Sonnie Hiles" 
+            photographerHyperlink="https://unsplash.com/@sonniehiles" 
+            imageHyperlink="https://unsplash.com/photos/shallow-focus-photo-of-woman-in-white-dress-shirt-on-seashore-during-daytime-WTe3w4POlCE"
+          />
+        )}
       </div>
 
       {/* Content Container */}

@@ -1,0 +1,40 @@
+'use client'
+
+import React from 'react';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+
+const pathnameToTitle = {
+    '/': '',
+    '/about': 'About',
+    '/bespoke': 'Bespoke',
+    '/collection': 'Collection',
+};
+
+const PageHeader = ({ image }) => {
+    const currentPath = usePathname();
+
+    const title = pathnameToTitle[currentPath] || '';
+  
+    return (
+    <div className="relative w-full h-64 md:h-80 lg:h-96">
+        {/* Header image */}
+        <Image
+            src={image}
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="w-full h-full"
+        />
+        {/* Overlay Text */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-georgia-italic font-normal">
+            {title}
+            </h1>
+        </div>
+    </div>
+  );
+};
+
+export default PageHeader;

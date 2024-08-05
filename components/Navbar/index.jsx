@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const pages = [
     {name: "Wyfe", path: "/"},
-    {name: "Dresses", path: "/dresses"},
+    {name: "Collection", path: "/collection"},
     {name: "Bespoke", path: "/bespoke"},
     {name: "About", path: "/about"}
   ]
@@ -42,10 +42,10 @@ const Navbar = () => {
             <Link href="/">Wyfe</Link>
           </div>
 
-          {/* Centre section */}
+          {/* Centre section
           <div className="flex--none text-center text-lg md:text-4xl lg:text-4xl">
             <Link href="/">{currentPage}</Link>
-          </div>
+          </div> */}
 
           {/* Right section */}
           <div className="flex-1 flex justify-end space-x-4 md:space-x-6 lg:space-x-8">

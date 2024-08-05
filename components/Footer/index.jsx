@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex items-center space-x-2">
           <Image src={whatsappIcon} alt="WhatsApp" width={24} height={24} />
           <p className="text-sm md:text-base lg:text-lg">WhatsApp: +44 1234 567 890</p>
-          <p className="text-sm md:text-base lg:text-lg">ciao@wyfe.com</p>
+          <p className="text-sm md:text-base lg:text-lg">hello@wyfe.com</p>
         </div>
       </div>
 
