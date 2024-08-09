@@ -9,7 +9,7 @@ export default function Home() {
       <div className="stitched-box p-4 mb-4 text-center">
         <Image src={wyfeLogoWhite} alt="Wyfe Logo" width={400} className="pb-4"/>
         <h2 className="text-2xl font-georgia-italic">Winter 2024</h2>
-        <p className="text-xl font-georgia-italic">ciao@wyfe.co.uk</p>
+        <p className="text-xl font-georgia-italic">hello@wyfe.co.uk</p>
       </div>
     </div>
   );
