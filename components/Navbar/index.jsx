@@ -14,8 +14,6 @@ const Navbar = () => {
     {name: "About", path: "/about"}
   ]
 
-  const currentPage = pages.find(page => page.path === currentPath)?.name || "Wyfe";
-
   const filteredPages = pages.filter(page => page.path !== "/" && page.path !== currentPath);
 
   // Homepage
@@ -34,18 +32,13 @@ const Navbar = () => {
   } else {
   // All other pages
     return (
-      <nav className="bg-black font-georgia-italic py-2 md:py-2 lg:py-2 text-white w-full">
-        <div className="max-w-7xl mx-auto flex justify-center items-center px-4 md:px-8 lg:px-12">
+      <nav className="bg-black font-georgia-italic py-1 md:py-1 lg:py-1 text-white w-full">
+        <div className="max-w-5xl mx-auto flex justify-center items-center px-4 md:px-8 lg:px-12">
           
           {/* Left section */}
           <div className="flex-1">
             <Link href="/">Wyfe</Link>
           </div>
-
-          {/* Centre section
-          <div className="flex--none text-center text-lg md:text-4xl lg:text-4xl">
-            <Link href="/">{currentPage}</Link>
-          </div> */}
 
           {/* Right section */}
           <div className="flex-1 flex justify-end space-x-4 md:space-x-6 lg:space-x-8">
