@@ -1,30 +1,35 @@
 import React from "react";
 import Image from 'next/image';
 
-import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import PageHeader from '../../components/PageHeader'
 
+// Env variable to toggle between public and client development images
 const imageSet = process.env.NEXT_PUBLIC_IMAGE_SET || 'unsplash';
 
-import TopLeftImage from '../../public/mood/bespoke/3a66b72d47890e697456a00f571105f8.jpg'
-import TopRightImage from '../../public/mood/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-import BottomLeftImage from '../../public/mood/bespoke/10-harley-viera-newton-wedding-dress-fitting.jpg'
-import BottomRightImage from '../../public/mood/bespoke/IMG_5975.jpg'
+import MoodTopImage from '../../public/mood/bespoke/3a66b72d47890e697456a00f571105f8.jpg'
+import MoodHeaderImage from '../../public/mood/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg'
+import MoodBottomLeftImage from '../../public/mood/bespoke/the_cat_small.jpg'
+import MoodBottomRightImage from '../../public/mood/bespoke/10-harley-viera-newton-wedding-dress-fitting.jpg'
 
-// let TopLeftImage, TopRightImage, BottomLeftImage, BottomRightImage;
+import UnsplashTopImage from '../../public/unsplash/bespoke/lance-reis-6n2_zdmsFFM-unsplash.jpg'
+import UnsplashHeaderImage from '../../public/unsplash/bespoke/collab-media-BzZ6hnqtsbo-unsplash.jpg'
+import UnslpashBottomLeftImage from '../../public/unsplash/bespoke/ivan-dodig-g9bBxGOPPMI-unsplash.jpg'
+import UnsplashBottomRightImage from '../../public/unsplash/bespoke/samantha-gades-JeEemtLSdjU-unsplash.jpg'
 
-// if (imageSet === 'mood') {
-//     TopLeftImage = '../../public/mood/bespoke/3a66b72d47890e697456a00f571105f8.jpg';
-//     TopRightImage = '../../public/mood/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-//     BottomLeftImage = '../../public/mood/bespoke/10-harley-viera-newton-wedding-dress-fitting.jpg'
-//     BottomRightImage = '../../public/mood/bespoke/IMG_5975.jpg'
-// } else {
-//     TopLeftImage = '/unsplash/bespoke/3a66b72d47890e697456a00f571105f8.jpg';
-//     TopRightImage = '/unsplash/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg';
-//     BottomLeftImage = '/unsplash/bespoke/10-harley-viera-newton-wedding-dress-fitting.jpg';
-//     BottomRightImage = '/unsplash/bespoke/IMG_5975.jpg';
-// }
+let HeaderImage, TopImage, BottomLeftImage, BottomRightImage;
+
+if (imageSet === 'mood') {
+    TopImage = MoodTopImage
+    HeaderImage = MoodHeaderImage
+    BottomLeftImage = MoodBottomLeftImage
+    BottomRightImage = MoodBottomRightImage
+} else {
+    TopImage = UnsplashTopImage
+    HeaderImage = UnsplashHeaderImage
+    BottomLeftImage = UnslpashBottomLeftImage
+    BottomRightImage = UnsplashBottomRightImage
+}
 
 // Email button backend
 const email = "hello@wyfe.co.uk"
@@ -38,7 +43,7 @@ const Bespoke = () => {
             {/* <Navbar /> */}
 
             <PageHeader 
-                image={ TopRightImage }
+                image={ HeaderImage }
             />
 
             {/* Page content */}
@@ -54,7 +59,7 @@ const Bespoke = () => {
                     {/* Top section */}
                     <div className="flex justify-center items-center gap-4 p-4">
                         <Image 
-                            src={TopLeftImage}
+                            src={TopImage}
                             alt="Bespoke 1"
                             className="w-1/2 h-auto object-cover"
                         />

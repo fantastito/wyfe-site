@@ -7,7 +7,6 @@ import ImageOverlay from '../components/ImageOverlay/Index'
 
 import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg';
 
-
 // Env variable to toggle between public and client development images
 const imageSet = process.env.NEXT_PUBLIC_IMAGE_SET || 'unsplash';
 
