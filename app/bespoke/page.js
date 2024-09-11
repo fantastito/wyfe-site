@@ -49,7 +49,7 @@ const Bespoke = () => {
             {/* Page content */}
             <main className="flex-1">
                 <div className="container mx-auto px-4 max-w-screen-lg">
-                    {/* Text */}
+                    {/* Bespoke intro */}
                     <div className="px-4 py-8 text-center font-georgia-italic max-w-3xl mx-auto">
                         <p className="text-sm md:text-base lg:text-base">
                         [Bespoke introduction] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis diam sit amet risus efficitur porta. Cras venenatis accumsan ornare. Aenean mattis ligula mi, vel gravida tellus porta eget. Proin posuere feugiat ante sed convallis.

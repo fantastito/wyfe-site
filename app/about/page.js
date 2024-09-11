@@ -1,31 +1,23 @@
 import React from "react";
 import Image from 'next/image';
 
-import Navbar from '../../components/Navbar'
+import PageHeader from '../../components/PageHeader'
 import Footer from '../../components/Footer'
 
-const imageSet = process.env.NEXT_PUBLIC_IMAGE_SET || 'unsplash';
+import HeaderImage from '../../public/mood/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
 
-import MoodTopLeftImage from '../../public/mood/bespoke/3a66b72d47890e697456a00f571105f8.jpg'
-import MoodTopRightImage from '../../public/mood/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-import UnsplashTopLeftImage from '../../public/unsplash/bespoke/collab-media-BzZ6hnqtsbo-unsplash.jpg'
-import UnsplashTopRightImage from '../../public/unsplash/bespoke/lance-reis-6n2_zdmsFFM-unsplash.jpg'
-
-
-let TopLeftImage, TopRightImage;
-
-if (imageSet === 'mood') {
-    TopLeftImage = MoodTopLeftImage;
-    TopRightImage = MoodTopRightImage;
-} else {
-    TopLeftImage = UnsplashTopLeftImage;
-    TopRightImage = UnsplashTopRightImage;
-}
+import TopLeftImage from '../../public/mood/about/b90558a67ea295f99ba828a3b3f06197.jpg'
+import TopRightImage from '../../public/mood/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
+import BottomLeftImage from '../../public/mood/about/IMG_6026.jpg'
+import BottomRightImage from '../../public/mood/about/IMG_6005.jpg'
 
 const About = () => {
     return (
         <div className="flex flex-col min-h-screen relative">
-            <Navbar />
+            {/* Navbar */}
+            <PageHeader 
+                image={ HeaderImage }
+            />
 
             {/* Page content */}
             <main className="flex-1">
@@ -33,22 +25,51 @@ const About = () => {
                     {/* Text */}
                     <div className="px-4 py-8 text-center font-georgia-italic max-w-3xl mx-auto">
                         <p className="text-sm md:text-base lg:text-base">
-                        [Bespoke introduction] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis diam sit amet risus efficitur porta. Cras venenatis accumsan ornare. Aenean mattis ligula mi, vel gravida tellus porta eget. Proin posuere feugiat ante sed convallis.
+                        [About introduction] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis diam sit amet risus efficitur porta. Cras venenatis accumsan ornare. Aenean mattis ligula mi, vel gravida tellus porta eget. Proin posuere feugiat ante sed convallis.
                         </p>
                     </div>
                     
                     {/* Top images */}
                     <div className="flex justify-center gap-4 p-4">
-                        <Image 
-                            src={TopLeftImage}
-                            alt="Bespoke 1"
-                            className="w-1/2 h-auto object-cover"
-                        />
-                        <Image 
-                            src={TopRightImage}
-                            alt="Bespoke 2"
-                            className="w-1/2 h-68 object-cover"
-                        />
+                        <div className="w-1/2">
+                            <Image 
+                                src={TopLeftImage}
+                                alt="Bespoke 1"
+                                className="w-full h-full object-cover aspect-square"
+                            />
+                        </div>      
+                        <div className="w-1/2">
+                            <Image 
+                                src={TopRightImage}
+                                alt="Bespoke 2"
+                                className="w-full h-full object-cover aspect-square"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Text */}
+                    <div className="px-4 py-8 text-center font-georgia-italic max-w-3xl mx-auto">
+                        <p className="text-sm md:text-base lg:text-base">
+                        [More text] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis diam sit amet risus efficitur porta. Cras venenatis accumsan ornare. Aenean mattis ligula mi, vel gravida tellus porta eget. Proin posuere feugiat ante sed convallis.
+                        </p>
+                    </div>
+                    
+                    {/* Bottom images */}
+                    <div className="flex justify-center gap-4 p-4">
+                        <div className="w-1/2">
+                            <Image 
+                                src={BottomLeftImage}
+                                alt="Bespoke 3"
+                                className="w-full h-full object-cover aspect-square"
+                            />
+                        </div>      
+                        <div className="w-1/2">
+                            <Image 
+                                src={BottomRightImage}
+                                alt="Bespoke 4"
+                                className="w-full h-full object-cover aspect-square"
+                            />
+                        </div>
                     </div>
                 
                 </div>
