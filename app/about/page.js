@@ -34,14 +34,14 @@ const About = () => {
                         <div className="w-1/2">
                             <Image 
                                 src={TopLeftImage}
-                                alt="Bespoke 1"
+                                alt="About 1"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>      
                         <div className="w-1/2">
                             <Image 
                                 src={TopRightImage}
-                                alt="Bespoke 2"
+                                alt="About 2"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>
@@ -59,14 +59,14 @@ const About = () => {
                         <div className="w-1/2">
                             <Image 
                                 src={BottomLeftImage}
-                                alt="Bespoke 3"
+                                alt="About 3"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>      
                         <div className="w-1/2">
                             <Image 
                                 src={BottomRightImage}
-                                alt="Bespoke 4"
+                                alt="About 4"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>
