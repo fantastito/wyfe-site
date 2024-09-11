@@ -7,20 +7,27 @@ import ImageOverlay from '../components/ImageOverlay/Index'
 
 import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg';
 
+import MoodHeroImage from '../public/mood/hero_image.jpg'
+import UnsplashHeroImage from '../public/unsplash/hero_image.jpg'
+
 // Env variable to toggle between public and client development images
 const imageSet = process.env.NEXT_PUBLIC_IMAGE_SET || 'unsplash';
 
-// import heroImage from '@/public/${imageSet}/IMG_6056.jpg';
+let HeroImage;
 
-const heroImage = `/${imageSet}/hero_image.jpg`;
+if (imageSet === 'mood') {
+  HeroImage = MoodHeroImage
+} else {
+  HeroImage = UnsplashHeroImage
+}
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen relative">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-auto">
         <Image
-          src={heroImage}
+          src={ HeroImage }
           alt="Background Image"
           layout="fill"
           objectFit="cover"
@@ -30,11 +37,13 @@ export default function Home() {
           className="w-full h-full"
         />
         {imageSet !== 'mood' && (
-          <ImageOverlay 
-            photographer="Sonnie Hiles" 
-            photographerHyperlink="https://unsplash.com/@sonniehiles" 
-            imageHyperlink="https://unsplash.com/photos/shallow-focus-photo-of-woman-in-white-dress-shirt-on-seashore-during-daytime-WTe3w4POlCE"
-          />
+          <div className="z-10 pointer-events-auto">
+            <ImageOverlay 
+              photographer="Sonnie Hiles" 
+              photographerHyperlink="https://unsplash.com/@sonniehiles" 
+              imageHyperlink="https://unsplash.com/photos/shallow-focus-photo-of-woman-in-white-dress-shirt-on-seashore-during-daytime-WTe3w4POlCE"
+            />
+          </div>
         )}
       </div>
 

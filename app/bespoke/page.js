@@ -81,7 +81,7 @@ const Bespoke = () => {
                     <div className="flex justify-center items-center pt-2 pb-4">
                         <a href={mailtoLink}>
                             <button className="font-georgia-italic bg-black border-2 border-white hover:bg-white text-white hover:text-black py-2 px-4">
-                                Inquire about bespoke a dress
+                                Inquire about a bespoke dress
                             </button>
                         </a>
                     </div>
