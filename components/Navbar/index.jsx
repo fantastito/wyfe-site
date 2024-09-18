@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const pages = [
     {name: "Wyfe", path: "/"},
-    {name: "Collection", path: "/collection"},
+    {name: "Lookbook", path: "/lookbook"},
     {name: "Bespoke", path: "/bespoke"},
     {name: "About", path: "/about"}
   ]

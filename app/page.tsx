@@ -3,23 +3,9 @@ import Image from 'next/image';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ImageOverlay from '../components/ImageOverlay/Index'
 
 import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg';
-
-import MoodHeroImage from '../public/mood/hero_image.jpg'
-import UnsplashHeroImage from '../public/unsplash/hero_image.jpg'
-
-// Env variable to toggle between public and client development images
-const imageSet = process.env.NEXT_PUBLIC_IMAGE_SET || 'unsplash';
-
-let HeroImage;
-
-if (imageSet === 'mood') {
-  HeroImage = MoodHeroImage
-} else {
-  HeroImage = UnsplashHeroImage
-}
+import HeroImage from '../public/hero_image.jpg'
 
 export default function Home() {
   return (
@@ -36,15 +22,6 @@ export default function Home() {
           quality={100}
           className="w-full h-full"
         />
-        {imageSet !== 'mood' && (
-          <div className="z-10 pointer-events-auto">
-            <ImageOverlay 
-              photographer="Sonnie Hiles" 
-              photographerHyperlink="https://unsplash.com/@sonniehiles" 
-              imageHyperlink="https://unsplash.com/photos/shallow-focus-photo-of-woman-in-white-dress-shirt-on-seashore-during-daytime-WTe3w4POlCE"
-            />
-          </div>
-        )}
       </div>
 
       {/* Content Container */}

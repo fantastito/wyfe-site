@@ -6,11 +6,12 @@ import { usePathname } from 'next/navigation';
 
 import Navbar from '../Navbar';
 
+// Page titles from paths; add new ones here when created
 const pathnameToTitle = {
-    '/': '',
+    '/': 'No name',
     '/about': 'About',
     '/bespoke': 'Bespoke',
-    '/collection': 'Collection',
+    '/lookbook': 'Lookbook',
 };
 
 const PageHeader = ({ image }) => {

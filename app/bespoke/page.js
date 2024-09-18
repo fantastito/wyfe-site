@@ -4,10 +4,10 @@ import Image from 'next/image';
 import Footer from '../../components/Footer'
 import PageHeader from '../../components/PageHeader'
 
-import TopImage from '../../public/mood/bespoke/3a66b72d47890e697456a00f571105f8.jpg'
-import HeaderImage from '../../public/mood/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-import BottomLeftImage from '../../public/mood/bespoke/the_cat_small.jpg'
-import BottomRightImage from '../../public/mood/bespoke/10-harley-viera-newton-wedding-dress-fitting.jpg'
+import TopImage from '../../public/bespoke/3a66b72d47890e697456a00f571105f8.jpg'
+import HeaderImage from '../../public/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg'
+import BottomLeftImage from '../../public/bespoke/the_cat_small.jpg'
+import BottomRightImage from '../../public/bespoke/10-harley-viera-newton-wedding-dress-fitting.jpg'
 
 // Email button backend
 const email = "hello@wyfe.co.uk"

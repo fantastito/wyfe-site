@@ -4,12 +4,12 @@ import Image from 'next/image';
 import PageHeader from '../../components/PageHeader'
 import Footer from '../../components/Footer'
 
-import HeaderImage from '../../public/mood/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
+import HeaderImage from '../../public/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
 
-import TopLeftImage from '../../public/mood/about/b90558a67ea295f99ba828a3b3f06197.jpg'
-import TopRightImage from '../../public/mood/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-import BottomLeftImage from '../../public/mood/about/IMG_6026.jpg'
-import BottomRightImage from '../../public/mood/about/IMG_6005.jpg'
+import TopLeftImage from '../../public/about/b90558a67ea295f99ba828a3b3f06197.jpg'
+import TopRightImage from '../../public/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
+import BottomLeftImage from '../../public/about/IMG_6026.jpg'
+import BottomRightImage from '../../public/about/IMG_6005.jpg'
 
 const About = () => {
     return (
