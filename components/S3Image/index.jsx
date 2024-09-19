@@ -1,49 +1,60 @@
-"use client"
+// "use client"
 
-import Image from 'next/image'
-import React, { useState, useEffect } from 'react';
+// import Image from 'next/image'
+// import React, { useState, useEffect } from 'react';
 
-//Image fetch call
-const getImage = async (imageName) => {
+// //Image fetch call
+// const getImageUrl = async (imageName) => {
+//     try {
+//         const response = await fetch(`http://localhost:3000/api/images?key=${encodeURIComponent(imageName)}`);
+//         // const response = await fetch('http://wyfe.co.uk/api/images?key=${encodeURIComponent(imageName)}');
+//         if (!response.ok) {
+//             throw new Error('Failed to fetch image');
+//         }
+//         const data = await response.text()
+//         return data
+//     } catch (error) {
+//         console.error('Error fetching image:', error);
+//         return null
+//     }
+// };
+
+// //Image return logic
+// const S3Image = ({ imageName }) => {
+//     const [imageUrl, setImageUrl] = useState(null);
+
+//     useEffect(() => {
+//         const fetchImageUrl = async () => {
+//             const url = await getImageUrl(imageName);
+//             setImageUrl(url);
+//         };
+    
+//         fetchImageUrl();
+//     }, [imageName]);
+
+//     return (
+//         imageUrl
+//     );
+// };
+
+// export default S3Image;
+
+// components/S3Image/index.jsx
+
+// Helper function to fetch the signed URL from your API
+const fetchS3ImageUrl = async (imageName) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/images?key=${encodeURIComponent(imageName)}`);
-        // const response = await fetch('http://wyfe.co.uk/api/images?key=${encodeURIComponent(imageName)}');
+        const response = await fetch(`/api/images?key=${encodeURIComponent(imageName)}`);
         if (!response.ok) {
-            throw new Error('Failed to fetch image');
+            throw new Error(`Failed to fetch image URL for ${imageName}`);
         }
-        const data = await response.text()
-        return data
+        const url = await response.text();
+        return url;
     } catch (error) {
-        console.error('Error fetching image:', error);
-        return null
+        console.error(`Error fetching image from S3:`, error);
+        return null;
     }
 };
 
-//Image return logic
-const S3Image = ({ imageName, alt, width = 1200, height = 1200 }) => {
-    const [imageUrl, setImageUrl] = useState(null);
+export default fetchS3ImageUrl;
 
-    useEffect(() => {
-        const fetchImage = async () => {
-            const url = await getImage(imageName);
-            setImageUrl(url);
-        };
-    
-        fetchImage();
-    }, [imageName]);
-    
-    if (!imageUrl) {
-        return <p>Loading image...</p>;
-    }
-
-    return (
-        <Image
-            src={imageUrl}
-            alt={alt}
-            width={width}
-            height={height}
-        />
-    );
-};
-
-export default S3Image;
