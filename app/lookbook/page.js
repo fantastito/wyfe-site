@@ -3,6 +3,8 @@ import Image from 'next/image';
 
 import Footer from '../../components/Footer'
 import PageHeader from '../../components/PageHeader'
+import S3Image from '../../components/S3Image'
+
 
 import TopImage from '../../public/lookbook/50dab22fc3e5b30a734eb7f183a9a2f3.jpg'
 import HeaderImage from '../../public/lookbook/dc10eb9d22316387842de6faae0dc912.jpg'
@@ -30,10 +32,16 @@ const Lookbook = () => {
                     
                     {/* Top section */}
                     <div className="flex justify-center items-center gap-4 p-4">
-                        <Image 
+                        {/* <Image 
                             src={TopImage}
                             alt="Lookbook 1"
                             className="w-1/2 h-auto object-cover"
+                        /> */}
+                        <S3Image
+                            imageName="wyfe_hair.jpg"
+                            alt="Lookbook 1"
+                            width={500}
+                            height={600}
                         />
                         <div className="px-4 py-8 text-center font-georgia-italic max-w-3xl mx-auto">
                             <p className="text-sm md:text-base lg:text-base">
