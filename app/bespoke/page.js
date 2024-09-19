@@ -1,13 +1,16 @@
-import React from "react";
+"use client"
+
+import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 
 import Footer from '../../components/Footer'
 import PageHeader from '../../components/PageHeader'
+import fetchS3ImageUrl from '../../components/S3Image'
 
-import TopImage from '../../public/bespoke/3a66b72d47890e697456a00f571105f8.jpg'
-import HeaderImage from '../../public/bespoke/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-import BottomLeftImage from '../../public/bespoke/the_cat_small.jpg'
-import BottomRightImage from '../../public/bespoke/10-harley-viera-newton-wedding-dress-fitting.jpg'
+const TopImage = 'wyfe_woman_dress.jpg';
+const HeaderImage = 'wyfe_champagne_glass.jpg';
+const BottomLeftImage = 'wyfe_cat_small.jpg';
+const BottomRightImage = 'wyfe_earring.jpg';
 
 // Email button backend
 const email = "hello@wyfe.co.uk"
@@ -16,12 +19,31 @@ const body = `Hi Wyfe,\n\nI'd like to know more about your bespoke dresses.\n\nW
 const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
 const Bespoke = () => {
+    
+    // Get urls from image names - imageUrls set to dict which allows referencing of names
+    const imageNames = [TopImage, HeaderImage, BottomLeftImage, BottomRightImage];
+
+    const [imageUrls, setImageUrls] = useState({});
+
+    useEffect(() => {
+        const fetchAllImages = async () => {
+            const urls = {};
+            for (const name of imageNames) {
+                const url = await fetchS3ImageUrl(name); // Directly use your function here
+                urls[name] = url;
+            }
+            setImageUrls(urls);
+        };
+
+        fetchAllImages();
+    }, []);
+    
     return (
         <div className="flex flex-col min-h-screen relative">
             {/* <Navbar /> */}
 
             <PageHeader 
-                image={ HeaderImage }
+                image={ imageUrls[HeaderImage] }
             />
 
             {/* Page content */}
@@ -37,8 +59,10 @@ const Bespoke = () => {
                     {/* Top section */}
                     <div className="flex justify-center items-center gap-4 p-4">
                         <Image 
-                            src={TopImage}
+                            src={imageUrls[TopImage]}
                             alt="Bespoke 1"
+                            width="600"
+                            height="600"
                             className="w-1/2 h-auto object-cover"
                         />
                         <div className="px-4 py-8 text-center font-georgia-italic max-w-3xl mx-auto">
@@ -68,15 +92,19 @@ const Bespoke = () => {
                     <div className="flex justify-center gap-4 p-4">
                         <div className="w-1/2">
                             <Image 
-                                src={BottomLeftImage}
+                                src={imageUrls[BottomLeftImage]}
                                 alt="Bespoke 1"
+                                width="472"
+                                height="600"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>      
                         <div className="w-1/2">
                             <Image 
-                                src={BottomRightImage}
+                                src={imageUrls[BottomRightImage]}
                                 alt="Bespoke 2"
+                                width="472"
+                                height="600"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>
