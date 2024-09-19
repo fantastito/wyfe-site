@@ -1,22 +1,43 @@
-import React from "react";
+"use client"
+
+import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 
 import PageHeader from '../../components/PageHeader'
 import Footer from '../../components/Footer'
+import fetchS3ImageUrl from '../../components/S3Image'
 
-import HeaderImage from '../../public/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-
-import TopLeftImage from '../../public/about/b90558a67ea295f99ba828a3b3f06197.jpg'
-import TopRightImage from '../../public/about/78c3906dbc503ebdcd50e2504235e0fe.jpg'
-import BottomLeftImage from '../../public/about/IMG_6026.jpg'
-import BottomRightImage from '../../public/about/IMG_6005.jpg'
+const HeaderImage = 'wyfe_champagne_glass.jpg';
+const TopLeftImage = 'wyfe_woman_dress_bows.jpg';
+const TopRightImage = 'wyfe_champagne_glass.jpg';
+const BottomLeftImage = 'wyfe_hair.jpg';
+const BottomRightImage = 'wyfe_legs.jpg';
 
 const About = () => {
+
+    // Get urls from image names - imageUrls set to dict which allows referencing of names
+    const imageNames = [HeaderImage, TopLeftImage, TopRightImage, BottomLeftImage, BottomRightImage];
+
+    const [imageUrls, setImageUrls] = useState({});
+
+    useEffect(() => {
+        const fetchAllImages = async () => {
+            const urls = {};
+            for (const name of imageNames) {
+                const url = await fetchS3ImageUrl(name); // Directly use your function here
+                urls[name] = url;
+            }
+            setImageUrls(urls);
+        };
+
+        fetchAllImages();
+    }, []);
+
     return (
         <div className="flex flex-col min-h-screen relative">
             {/* Navbar */}
             <PageHeader 
-                image={ HeaderImage }
+                image={ imageUrls[HeaderImage] }
             />
 
             {/* Page content */}
@@ -33,15 +54,19 @@ const About = () => {
                     <div className="flex justify-center gap-4 p-4">
                         <div className="w-1/2">
                             <Image 
-                                src={TopLeftImage}
+                                src={ imageUrls[TopLeftImage] }
                                 alt="About 1"
+                                width="472"
+                                height="600"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>      
                         <div className="w-1/2">
                             <Image 
-                                src={TopRightImage}
+                                src={ imageUrls[TopRightImage] }
                                 alt="About 2"
+                                width="472"
+                                height="600"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>
@@ -58,15 +83,19 @@ const About = () => {
                     <div className="flex justify-center gap-4 p-4">
                         <div className="w-1/2">
                             <Image 
-                                src={BottomLeftImage}
+                                src={ imageUrls[BottomLeftImage] }
                                 alt="About 3"
+                                width="472"
+                                height="600"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>      
                         <div className="w-1/2">
                             <Image 
-                                src={BottomRightImage}
+                                src={ imageUrls[BottomRightImage] }
                                 alt="About 4"
+                                width="472"
+                                height="600"
                                 className="w-full h-full object-cover aspect-square"
                             />
                         </div>
