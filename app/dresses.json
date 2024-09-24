@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Dress name 1",
+        "description": "A beautiful short satin gown perfect for a modern wedding.",
+        "price": 1800,
+        "images": [
+            "wyfe_kate_moss.jpg",
+            "wyfe_woman_sparkle_top.jpg",
+            "wyfe_woman_wedding_dress.jpg",
+            "wyfe_woman_big_hat.jpg",
+            "wyfe_anna_taylor_joy.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Dress name 2",
+        "description": "A classic lace bridal dress with a stunning hem line.",
+        "price": 1700,
+        "images": [
+            "wyfe_woman_dress_bows.jpg",
+            "wyfe_woman_dress_white_2.jpg",
+            "wyfe_woman_dress.jpg",
+            "wyfe_woman_wedding_dress_short.jpg",
+            "wyfe_woman_dress_black.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Dress name 3",
+        "description": "A modern bridal gown ideal for the day.",
+        "price": 1600,
+        "images": [
+            "wyfe_woman_lana_del_rays.jpg",
+            "wyfe_woman_hair_flowers.jpg",
+            "wyfe_woman_dress_veil.jpg",
+            "wyfe_woman_dog.jpg",
+            "wyfe_woman_dress_white.jpg"
+        ]
+    }
+]
+  

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import Footer from '../../components/Footer'
 import PageHeader from '../../components/PageHeader'
-import fetchS3ImageUrl from '../../components/S3Image'
+import fetchS3ImageUrl from '../utils/fetchS3ImageUrl'
 
 const TopImage = 'wyfe_woman_dress.jpg';
 const HeaderImage = 'wyfe_champagne_glass.jpg';
@@ -29,7 +29,7 @@ const Bespoke = () => {
         const fetchAllImages = async () => {
             const urls = {};
             for (const name of imageNames) {
-                const url = await fetchS3ImageUrl(name); // Directly use your function here
+                const url = await fetchS3ImageUrl(name); // fetching function called here
                 urls[name] = url;
             }
             setImageUrls(urls);

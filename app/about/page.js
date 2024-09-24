@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import PageHeader from '../../components/PageHeader'
 import Footer from '../../components/Footer'
-import fetchS3ImageUrl from '../../components/S3Image'
+import fetchS3ImageUrl from '../utils/fetchS3ImageUrl'
 
 const HeaderImage = 'wyfe_champagne_glass.jpg';
 const TopLeftImage = 'wyfe_woman_dress_bows.jpg';
