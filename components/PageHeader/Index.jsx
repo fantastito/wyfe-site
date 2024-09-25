@@ -25,9 +25,8 @@ const PageHeader = ({ image }) => {
             <Image
                 src={image}
                 alt={title}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
                 className="w-full h-full"
             />
             {/* Navbar */}

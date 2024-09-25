@@ -2,7 +2,7 @@
 const fetchS3ImageUrl = async (imageName) => {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
     try {
-        const response = await fetch(`/api/images?key=${encodeURIComponent(imageName)}`);
+        const response = await fetch(`${baseUrl}/api/images?key=${encodeURIComponent(imageName)}`);
         if (!response.ok) {
             throw new Error(`Failed to fetch image URL for ${imageName}`);
         }
@@ -15,4 +15,3 @@ const fetchS3ImageUrl = async (imageName) => {
 };
 
 export default fetchS3ImageUrl;
-
