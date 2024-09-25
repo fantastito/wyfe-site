@@ -96,7 +96,7 @@ const Bespoke = () => {
                                 alt="Bespoke 1"
                                 width="472"
                                 height="600"
-                                className="w-full h-full object-cover aspect-square"
+                                className="w-full h-full object-cover"
                             />
                         </div>      
                         <div className="w-1/2">

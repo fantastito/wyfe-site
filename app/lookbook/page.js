@@ -5,6 +5,7 @@ import fetchS3ImageUrl from '../utils/fetchS3ImageUrl'
 import dressesData from '../dresses.json'
 import headerImage from '../../public/wyfe_woman_lana_del_ray.jpg'
 
+//Fetch gallery images, taking dresses from JSON and getting URLs for each
 const fetchImages = async () => {
     const images = await Promise.all(
       dressesData.map(async (dress) => {
@@ -26,11 +27,11 @@ const fetchImages = async () => {
   
     // Flatten nested arrays into one array
     return images.flat();
-  };
+};
 
-  export default async function Lookbook () {
+export default async function Lookbook () {
     const images = await fetchImages();
-    
+
     return (
         <div className="flex flex-col min-h-screen relative">
             <PageHeader 
