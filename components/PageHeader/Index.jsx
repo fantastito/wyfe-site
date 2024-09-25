@@ -20,7 +20,7 @@ const PageHeader = ({ image }) => {
     const title = pathnameToTitle[currentPath] || '';
   
     return (
-        <div className="relative w-full h-64 md:h-80 lg:h-96">
+        <div className="relative w-full h-36 md:h-36 lg:h-48">
             {/* Header image */}
             <Image
                 src={image}
