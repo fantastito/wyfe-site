@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import Navbar from '../components/Navbar';
+import NavbarHome from '../components/NavbarHome';
 import Footer from '../components/Footer';
 
 import wyfeLogoWhite from '../public/wyfe_logo_text_white.svg';
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         
         {/* Navbar */}
-        <Navbar />
+        <NavbarHome />
       </div>
       
       {/* Footer */}
