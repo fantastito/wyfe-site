@@ -22,8 +22,6 @@ const fetchImages = async (imageNames) => {
                 };
             })
         );
-        console.log(imageUrls)
-        // console.log(imageUrls)
         return imageUrls;
     } catch (error) {
         console.error('Error fetching S3 URLs:', error);

@@ -1,16 +1,15 @@
-"use client"
-
-import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 
 import Footer from '../../components/Footer'
 import PageHeader from '../../components/PageHeader'
 import fetchS3ImageUrl from '../utils/fetchS3ImageUrl'
 
-const TopImage = 'wyfe_woman_dress.jpg';
 const HeaderImage = 'wyfe_champagne_glass.jpg';
+const TopImage = 'wyfe_woman_dress.jpg';
 const BottomLeftImage = 'wyfe_cat_small.jpg';
 const BottomRightImage = 'wyfe_earring.jpg';
+
+const imageNames = [HeaderImage, TopImage, BottomLeftImage, BottomRightImage];
 
 // Email button backend
 const email = "hello@wyfe.co.uk"
@@ -18,32 +17,33 @@ const subject = "Tell me about bespoke dresses"
 const body = `Hi Wyfe,\n\nI'd like to know more about your bespoke dresses.\n\nWedding date: [When is your wedding?]\nBudget: [What is your budget?]\nWhat I'm looking for: [What ideas do you have?]\n\nThanks,`
 const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-const Bespoke = () => {
-    
-    // Get urls from image names - imageUrls set to dict which allows referencing of names
-    const imageNames = [TopImage, HeaderImage, BottomLeftImage, BottomRightImage];
+//Image fetching
+const fetchImages = async (imageNames) => {
+    try {
+        const imageUrls = await Promise.all(
+            imageNames.map(async (imageName) => {
+                const url = await fetchS3ImageUrl(imageName);
+                return {
+                name: imageName, url
+                };
+            })
+        );
+        return imageUrls;
+    } catch (error) {
+        console.error('Error fetching S3 URLs:', error);
+        return [];
+    }
+};
 
-    const [imageUrls, setImageUrls] = useState({});
-
-    useEffect(() => {
-        const fetchAllImages = async () => {
-            const urls = {};
-            for (const name of imageNames) {
-                const url = await fetchS3ImageUrl(name); // fetching function called here
-                urls[name] = url;
-            }
-            setImageUrls(urls);
-        };
-
-        fetchAllImages();
-    }, []);
+export default async function Bespoke () {
+    const imageUrls = await fetchImages(imageNames);
     
     return (
         <div className="flex flex-col min-h-screen relative">
             {/* <Navbar /> */}
 
             <PageHeader 
-                image={ imageUrls[HeaderImage] }
+                image={ imageUrls[0].url }
             />
 
             {/* Page content */}
@@ -59,7 +59,7 @@ const Bespoke = () => {
                     {/* Top section */}
                     <div className="flex justify-center items-center gap-4 p-4">
                         <Image 
-                            src={imageUrls[TopImage]}
+                            src={imageUrls[1].url}
                             alt="Bespoke 1"
                             width="600"
                             height="600"
@@ -92,7 +92,7 @@ const Bespoke = () => {
                     <div className="flex justify-center gap-4 p-4">
                         <div className="w-1/2">
                             <Image 
-                                src={imageUrls[BottomLeftImage]}
+                                src={imageUrls[2].url}
                                 alt="Bespoke 1"
                                 width="472"
                                 height="600"
@@ -101,7 +101,7 @@ const Bespoke = () => {
                         </div>      
                         <div className="w-1/2">
                             <Image 
-                                src={imageUrls[BottomRightImage]}
+                                src={imageUrls[3].url}
                                 alt="Bespoke 2"
                                 width="472"
                                 height="600"
@@ -117,5 +117,3 @@ const Bespoke = () => {
 
     );
 };
-
-export default Bespoke;
