@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Dress name 1",
+        "name": "Clara",
         "description": "A beautiful short satin gown perfect for a modern wedding.",
         "price": 1800,
         "images": [
@@ -14,7 +14,7 @@
     },
     {
         "id": 2,
-        "name": "Dress name 2",
+        "name": "Ruby",
         "description": "A classic lace bridal dress with a stunning hem line.",
         "price": 1700,
         "images": [
@@ -27,7 +27,7 @@
     },
     {
         "id": 3,
-        "name": "Dress name 3",
+        "name": "Juliet",
         "description": "A modern bridal gown ideal for the day.",
         "price": 1600,
         "images": [
@@ -39,4 +39,3 @@
         ]
     }
 ]
-  

@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import styles from '../LookbookGallery.module.css';
 
 const LookbookGallery = ({ images }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
       {images.map((img) => (
-        <div key={img.id} className="relative group w-60 h-80">
+        <div key={img.id} className="relative group h-120 w-auto">
           {img.src ? (
             <>
               <Image
