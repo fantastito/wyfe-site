@@ -36,6 +36,7 @@ export default async function Lookbook () {
         <div className="flex flex-col min-h-screen relative">
             <PageHeader 
                 image={ headerImage }
+                title={ "Lookbook" }
             />
 
             {/* Page content */}

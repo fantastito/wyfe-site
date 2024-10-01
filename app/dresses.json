@@ -10,7 +10,8 @@
             "wyfe_woman_wedding_dress.jpg",
             "wyfe_woman_big_hat.jpg",
             "wyfe_anna_taylor_joy.jpg"
-        ]
+        ],
+        "intro": "[Clara introduction] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis diam sit amet risus efficitur porta. Cras venenatis accumsan ornare. Aenean mattis ligula mi, vel gravida tellus porta eget. Proin posuere feugiat ante sed convallis."
     },
     {
         "id": 2,
@@ -23,7 +24,8 @@
             "wyfe_woman_dress.jpg",
             "wyfe_woman_wedding_dress_short.jpg",
             "wyfe_woman_dress_black.jpg"
-        ]
+        ],
+        "intro": "[Ruby introduction] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis diam sit amet risus efficitur porta. Cras venenatis accumsan ornare. Aenean mattis ligula mi, vel gravida tellus porta eget. Proin posuere feugiat ante sed convallis."
     },
     {
         "id": 3,
@@ -36,6 +38,7 @@
             "wyfe_woman_dress_veil.jpg",
             "wyfe_woman_dog.jpg",
             "wyfe_woman_dress_white.jpg"
-        ]
+        ],
+        "intro": "[Juliet introduction] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis diam sit amet risus efficitur porta. Cras venenatis accumsan ornare. Aenean mattis ligula mi, vel gravida tellus porta eget. Proin posuere feugiat ante sed convallis."
     }
 ]

@@ -1,30 +1,22 @@
-'use client'
-
 import React from 'react';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 
 import Navbar from '../Navbar';
 
-// Page titles from paths; add new ones here when created
-const pathnameToTitle = {
-    '/': 'No name',
-    '/about': 'About',
-    '/bespoke': 'Bespoke',
-    '/lookbook': 'Lookbook',
-};
+const PageHeader = ({ image, title }) => {
+    // Remove leading slash if present
+    const cleanedTitle = title.startsWith('/') ? title.slice(1) : title;
 
-const PageHeader = ({ image }) => {
-    const currentPath = usePathname();
+    const headerTitle = cleanedTitle 
+        ? cleanedTitle.charAt(0).toUpperCase() + cleanedTitle.slice(1) 
+        : '';
 
-    const title = pathnameToTitle[currentPath] || '';
-  
     return (
         <div className="relative w-full h-28 md:h-36 lg:h-48">
             {/* Header image */}
             <Image
                 src={image}
-                alt={title}
+                alt={headerTitle}
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
                 className="w-full h-full"   
@@ -47,7 +39,7 @@ const PageHeader = ({ image }) => {
                 {/* Title */}
                 <div className="flex-grow-0 flex justify-center py-2">
                     <h1 className="text-white text-2xl md:text-3xl lg:text-5xl font-georgia-italic font-normal">
-                        {title}
+                        {headerTitle}
                     </h1>
                 </div>
 

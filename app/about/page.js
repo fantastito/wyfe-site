@@ -37,6 +37,7 @@ export default async function About () {
             {/* Navbar */}
             <PageHeader 
                 image={ imageUrls[0].url }
+                title={ "About" }
             />
 
             {/* Page content */}

@@ -44,6 +44,7 @@ export default async function Bespoke () {
 
             <PageHeader 
                 image={ imageUrls[0].url }
+                title={ "Bespoke" }
             />
 
             {/* Page content */}
